@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
   end
 
   def new
-
+    @listing = Listing.new
   end
 
   def show
@@ -30,7 +30,7 @@ class ListingsController < ApplicationController
   end
 
   private
-  
+
   def set_listing
     id = params[:id]
     @listing = Listing.find(id)

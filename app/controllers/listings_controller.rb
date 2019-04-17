@@ -1,11 +1,12 @@
 class ListingsController < ApplicationController
-  
+  before_action :set_listing, only: [:show, :edit, :update, :destory]
+
   def create
 
   end
 
   def index
-
+    @listings = Listing.all
   end
 
   def update
@@ -25,7 +26,14 @@ class ListingsController < ApplicationController
   end
 
   def show
+    
+  end
 
+  private
+  
+  def set_listing
+    id = params[:id]
+    @listing = Listing.find(id)
   end
 
 end

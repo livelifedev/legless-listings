@@ -23,6 +23,8 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    @breeds = Breed.all
+    @sexes = Listing.sexes.keys
   end
 
   def show

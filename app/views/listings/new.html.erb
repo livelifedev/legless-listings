@@ -30,7 +30,7 @@
     <%= form.select :breed_id, @breeds.map {|b| [b.name, b.id]} %>
   </div>
   <div>
-    <% @sexes.each do |sex| %>
+    <% @sexes.each do |option| %>
       <div>
         <%= form.radio_button :sex, option %>
         <%= form.label "sex_#{option}".to_sym, option %>

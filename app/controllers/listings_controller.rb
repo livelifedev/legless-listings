@@ -2,9 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destory]
 
   def create
-    a = 1
-    byebug
-    a += 2
+    @listing = Listing.create(listing_params)
     byebug
   end
 
@@ -39,6 +37,10 @@ class ListingsController < ApplicationController
   def set_listing
     id = params[:id]
     @listing = Listing.find(id)
+  end
+
+  def lisitng_params
+    params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :date_of_birth, :diet)
   end
 
 end

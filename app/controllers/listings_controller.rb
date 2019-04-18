@@ -2,6 +2,9 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destory]
 
   def create
+    a = 1
+    byebug
+    a += 2
     byebug
   end
 
